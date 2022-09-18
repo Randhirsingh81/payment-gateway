@@ -20,7 +20,7 @@ app.post("/pay", [parseUrl, parseJson], (req, res) => {
     customerPhone: req.body.phone,
   };
   let params = {};
-  params["MID"] = "eRhaHn98885992784587";
+  params["MID"] = "jDmsGs17261719390925";
   params["WEBSITE"] = "WEBSTAGING";
   params["CHANNEL_ID"] = "WEB";
   params["INDUSTRY_TYPE_ID"] = "Retail";
@@ -31,7 +31,7 @@ app.post("/pay", [parseUrl, parseJson], (req, res) => {
   params["EMAIL"] = paymentDetails.customerEmail;
   params["TXN_AMOUNT"] = paymentDetails.amount;
 
-  checksumLib.genchecksum(params, "N7#ddlHuus#gjJbb", (err, checksum) => {
+  checksumLib.genchecksum(params, "i_4#FtwD0@lDrD8j", (err, checksum) => {
     let url = "https://securegw-stage.paytm.in/order/process";
     let formFields = "";
     for (x in params) {
@@ -96,29 +96,6 @@ app.post("/pay", [parseUrl, parseJson], (req, res) => {
   
   main().catch(console.error);
   
-
-  // var transporter = nodemailer.createTransport({
-  //   service: 'gmail',
-  //   auth: {
-  //     user: 'sppspps666@gmail.com',
-  //     pass: 'Sha739402@'
-  //   }
-  // });
-  
-  // var mailOptions = {
-  //   from: 'sppspps666@gmail.com',
-  //   to: paymentDetails.customerEmail,
-  //   subject: 'Thank You',
-  //   text: `Your donation of Rs.` + paymentDetails.amount +` has been recieved`
-  // }; 
-  
-  // transporter.sendMail(mailOptions, function(error, info){
-  //   if (error) {
-  //     console.log(error);
-  //   } else {
-  //     console.log('Email sent: ' + info.response);
-  //   }
-  // });
 });
 
 
